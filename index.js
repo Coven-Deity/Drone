@@ -40,11 +40,12 @@ const eventsPath = join(__dirname, 'events');
 const eventFiles = readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
 client.utils = {
-	sleep: async function (waitTime) {
+	configFile,
+	sleep: async function (milliseconds) {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve(true);
-			}, waitTime);
+			}, milliseconds);
 		});
 	}
 }
