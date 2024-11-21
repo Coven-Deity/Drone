@@ -14,7 +14,7 @@ module.exports = {
             if ((lowerCaseContent.match(regEx) !== null)) {
                 const embed = new discordEmbedBuilder()
                     .setTitle('Hello Message')
-                    .setDescription(`Hello <@${interaction.user.id}>`)
+                    .setDescription(`Hello <@${interaction.author.id}>`)
                     .setFooter({
                         text: `Drone`,
                         iconURL: ``
