@@ -128,3 +128,17 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Drone specific
+.bin/
+.config/
+.data/
+.logs/
+.private/
+node_modules/
+.env
+archiveDir.ps1
+Drone.service
+package-lock.json
+package.json
+
