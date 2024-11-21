@@ -10,7 +10,7 @@ module.exports = {
 
             const lowerCaseContent = interaction.content.toLowerCase();
 
-            regEx = new RegExp(`^hello bot`, 'g');
+            const regEx = /^hello bot/;
             if ((lowerCaseContent.match(regEx) !== null)) {
                 const embed = new discordEmbedBuilder()
                     .setTitle('Hello Message')
