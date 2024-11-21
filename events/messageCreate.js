@@ -17,7 +17,7 @@ module.exports = {
                     .setDescription(`Hello <@${interaction.author.id}>`)
                     .setFooter({
                         text: `Drone`,
-                        iconURL: ``
+                        iconURL: `https://raw.githubusercontent.com/Coven-Deity/Drone/refs/heads/main/Drone_avatar.png`
                     });
                 embed.addFields({ name: 'Field1', value: `Field1_Value` });
                 return await interaction.channel.send({ embeds: [embed] });
