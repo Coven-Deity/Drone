@@ -9,6 +9,10 @@ module.exports = {
 		console.log(`  Current Time:\n${now}`);
 		console.log(`  Logged into Discord as: \n${client.user.tag}`);
 
+		await client.guilds.cache.forEach(async (guild) => {
+			console.log(`${guild.name} | ${guild.id}`);
+		})
+
 		const jobsEveryHour = new CronJob('0 * * * * *', async () => {
 			client.user.setActivity(`drone games!`);
 		}, null, true, 'Etc/UTC');
