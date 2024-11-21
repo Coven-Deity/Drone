@@ -2,6 +2,9 @@
 Drone Discord bot.
 
 ```
+git clone https://github.com/Coven-Deity/Drone.git
+```
+```
 mkdir .logs
 ```
 ```
@@ -46,3 +49,14 @@ Create `config.json` in the .private directory and populate with
     - Copy the `GENERATED URL` to config.json as "invitelink"
   - Close the [Discord Developer Portal]
   - Invite the bot to your server using the link you copied.
+
+## Updating
+```
+git add --all
+```
+```
+git commit --message "brief concise description of the commit"
+```
+```
+git push origin main
+```
