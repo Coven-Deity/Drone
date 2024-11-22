@@ -39,24 +39,20 @@ async function checkForRepoChanges(repoOwner, repoName) {
 	} catch (error) {
 		if (error.code === 'ENOENT') {
 			repoPreviousState = {
-				commitCount: 0,
-				issueCount: 0,
-				pullRequestCount: 0
+				size: 0,
+				open_issues_count: 0
 			};
 			writeFileSync(repoPreviousStateFile, JSON.stringify(repoPreviousState));
 		} else {
 			throw error;
 		}
 	}
-
 	const repoInfo = await fetchRepoInfo(repoOwner, repoName);
-	const currentCommitCount = repoInfo.open_issues_count;
-	const currentIssueCount = repoInfo.open_issues_count;
-	const currentPullRequestCount = repoInfo.open_pull_requests_count;
+	const size = repoInfo.size;
+	const open_issues_count = repoInfo.open_issues_count;
 
-	if (currentCommitCount !== repoPreviousState.commitCount ||
-		currentIssueCount !== repoPreviousState.issueCount ||
-		currentPullRequestCount !== repoPreviousState.pullRequestCount) {
+	if (size !== repoPreviousState.size ||
+		open_issues_count !== repoPreviousState.open_issues_count) {
 		const embed = new discordEmbedBuilder()
 			.setColor('#0099ff')
 			.setTitle(`New activity in the GitHub Repository: ${repoOwner}/${repoName}`)
@@ -74,9 +70,8 @@ async function checkForRepoChanges(repoOwner, repoName) {
 		}
 
 		repoPreviousState = {
-			commitCount: currentCommitCount,
-			issueCount: currentIssueCount,
-			pullRequestCount: currentPullRequestCount
+			size: size,
+			open_issues_count: open_issues_count
 		};
 		writeFileSync(repoPreviousStateFile, JSON.stringify(repoPreviousState));
 	}
