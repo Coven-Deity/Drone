@@ -25,7 +25,7 @@ module.exports = {
                 return await interaction.channel.send({ embeds: [embed] });
             }
 
-            regEx = /^-urban/;
+            regEx = /^-urban /;
             if ((lowerCaseContent.match(regEx) !== null)) {
                 const searchTerm = lowerCaseContent.split('-urban ')[1];
                 try {
