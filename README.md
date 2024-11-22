@@ -26,7 +26,17 @@ Create `config.json` in the .private directory and populate with
     "botName": "<what you called the bot on the discord developer portal>",
     "botPublicKey": "<botPublicKey>",
     "botToken": "<botToken>",
-    "botInviteLink": "https://discord.com/oauth2/authorize?client_id=<botId>&permissions=8&integration_type=0&scope=bot"
+    "botInviteLink": "https://discord.com/oauth2/authorize?client_id=<botId>&permissions=8&integration_type=0&scope=bot",
+    "botRepoOwner": "Coven-Deity",
+    "botRepoName": "Drone",
+    "repoUpdateChannels": [
+        {
+            "channel": "<channel1 for repo update message>"
+        },
+        {
+            "channel": "<channel2 for repo update message>"
+        }
+    ]
 }
 ```
 

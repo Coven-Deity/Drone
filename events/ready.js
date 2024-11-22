@@ -16,7 +16,7 @@ module.exports = {
 
 		const jobsEveryHour = new CronJob('0 * * * * *', async () => {
 			client.user.setActivity(`drone games!`);
-			checkForRepoChanges(client.utils.configFile.botRepoOwner, client.utils.configFile.botRepoName);
+			// checkForRepoChanges(client.utils.configFile.botRepoOwner, client.utils.configFile.botRepoName);
 		}, null, true, 'Etc/UTC');
 		jobsEveryHour.start();
 	}
