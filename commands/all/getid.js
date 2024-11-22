@@ -16,9 +16,11 @@ module.exports = {
     try {
       const member = await interaction.options.getUser('member').fetch(true);
       const avatarURL = member.displayAvatarURL({ dynamic: true });
-      console.log(member);
-
-      const embed = new discordEmbedBuilder()
+      let bannerURL = null;
+      if (member.bannerURL()) {
+        bannerURL = member.bannerURL({ dynamic: true });
+      }
+      let embed = new discordEmbedBuilder()
         .setColor('#007bff')
         .setAuthor({ name: member.tag, iconURL: avatarURL })
         .addFields(
@@ -27,9 +29,13 @@ module.exports = {
           { name: 'Display Name', value: member.displayName }
         )
         .setThumbnail(avatarURL)
-        // .setImage(member.bannerURL() ? member.bannerURL({ dynamic: true }) : '')
-        .setImage(avatarURL)
         .setFooter({ text: `Requested by ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL({ dynamic: true }) });
+
+      if (bannerURL) {
+        embed.setImage(bannerURL)
+      } else {
+        embed.setImage(avatarURL)
+      }
 
       await interaction.reply({ embeds: [embed], ephemeral: false });
     } catch (error) {
