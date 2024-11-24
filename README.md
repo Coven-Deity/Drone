@@ -37,6 +37,7 @@ node index.js
     - Copy the `GENERATED URL` to `.private/config.json` as "botInviteLink"
   - Close the [Discord Developer Portal]
   - Invite the bot to your server using the link you copied.
+**Fill in any other missing info in:** `.private/config.json`
 ## Install Service
 - Follow the instructions in the Drone.service file to install the bot as a service
 ## Updating

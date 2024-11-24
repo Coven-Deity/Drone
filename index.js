@@ -51,12 +51,12 @@ const configContent = {
 	botInviteLink: 'https://discord.com/oauth2/authorize?client_id=<botId>&permissions=8&integration_type=0&scope=bot',
 	botRepoOwner: 'Coven-Deity',
 	botRepoName: 'Drone',
+	botLogChannels: [
+		'channel1Id'
+	],
 	repoUpdateChannels: [
 		{
 			channel: 'channel1Id'
-		},
-		{
-			channel: 'channel2Id'
 		}
 	]
 };
